@@ -2,20 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Declare custom properties for color theming */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --heading-color: #111111;
+  --paragraph-color: #333333;
+  --hoverColor: #ff0000; /* Red for light mode */
+  --buttonColor: blue;
+  --btnTxt: #fff;
+  --darkText: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --heading-color: #f0f0f0;
+    --paragraph-color: #cccccc;
+    --hoverColor: #ffdd00; /* Yellow for dark mode */
+    --buttonColor: blue;
+    --btnTxt: #fff;
+    --darkText: #0a0a0a;
   }
 }
 
+/* Set up the body styles with the custom font and colors */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+}
+
+/* Importing the Roboto Condensed font from the public directory */
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('/fonts/RobotoCondensed.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  color: var(--paragraph-color);
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+li {
+  color: var(--paragraph-color);
+  list-style: none;
+  line-height: 1.6;
+  margin-bottom: 0.5em;
+}
+
+.link {
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--hoverColor); /* Switch to the primary text color on hover */
+}
+
+/* Universal Button Styles */
+.button {
+  background-color: var(--buttonColor);
+  color: var(--btnTxt);
+  padding: 0.5em 1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--hoverColor); /* Invert to main foreground color */
+  color: var(--background);
 }
