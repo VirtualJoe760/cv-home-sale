@@ -27,22 +27,24 @@ const CarouselHero: React.FC = () => {
   return (
     <div className="relative isolate overflow-hidden">
       {/* Layered images for cross-fade */}
-      <div className="absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out">
+      <div className="absolute inset-0 z-0">
         {/* Current Image */}
         <Image
           src={images[currentIndex].src}
           alt={images[currentIndex].alt}
           fill
-          style={{ objectFit: "cover", opacity: 1, transition: "opacity 1s ease-in-out" }}
-          className="absolute inset-0 transition-opacity duration-[10s] ease-in-out"
+          style={{ objectFit: "cover" }}
+          className="absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out"
+          loading="eager" // Ensure no lazy-loading flicker for hero images
         />
         {/* Next Image */}
         <Image
           src={images[nextIndex].src}
           alt={images[nextIndex].alt}
           fill
-          style={{ objectFit: "cover", opacity: 0, transition: "opacity 1s ease-in-out" }}
-          className="absolute inset-0 transition-opacity duration-[10s] ease-in-out"
+          style={{ objectFit: "cover" }}
+          className="absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
+          loading="eager"
         />
       </div>
 
@@ -57,6 +59,7 @@ const CarouselHero: React.FC = () => {
             alt="Logo representing Coachella Valley Handyman"
             width={72}
             height={72}
+            loading="eager"
           />
 
           {/* Heading */}
@@ -73,7 +76,7 @@ const CarouselHero: React.FC = () => {
           <div className="mt-10 flex items-center gap-x-6">
             <Link
               href={carouselData.ctaOne.href}
-              className="rounded-md scroll-smooth bg-indigo-500 px-3.5 py-2.5 text-sm text-white shadow-sm hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="button scroll-smooth px-3.5 py-2.5 text-sm shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               aria-label={carouselData.ctaOne.ariaLabel}
             >
               {carouselData.ctaOne.text}

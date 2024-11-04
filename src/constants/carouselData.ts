@@ -34,8 +34,8 @@ interface CarouselImage {
     // Call to Actions
     ctaOne: {
       text: "Sign In",
-      href: "/sign-in",
-      ariaLabel: "Contact us for handyman services",
+      href: "/auth/sign-in",
+      ariaLabel: "Login to your account",
     } as CTA,
     ctaTwo: {
       text: "See Listings",

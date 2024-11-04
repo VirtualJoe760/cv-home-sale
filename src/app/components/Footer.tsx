@@ -6,13 +6,14 @@ import { useContext } from "react";
 import { LogoContext } from "@/app/layout";
 import FacebookIcon from "@/assets/socials/facebook.svg";
 import InstagramIcon from "@/assets/socials/instagram.svg";
+import { useSession } from "next-auth/react";
 
 const navigation = {
   navigate: [
-    { name: "Home", href: "/" },
     { name: "Listings", href: "/listings" },
     { name: "Buy", href: "/buy" },
     { name: "Sell", href: "/sell" },
+    { name: "Rent", href: "/rent" },
   ],
   buyers: [
     { name: "Get Pre-Approved", href: "/get-pre-approved" },
@@ -25,28 +26,31 @@ const navigation = {
     { name: "News", href: "/news" },
   ],
   clients: [
-    { name: "Login", href: "/sign-in" },
-    { name: "Sign Up", href: "/sign-up" },
+    { name: "Login", href: "/auth/sign-in" },
+    { name: "Sign Up", href: "/auth/sign-up" },
+  ],
+  user: [
     { name: "Profile", href: "/profile" },
     { name: "Dashboard", href: "/dashboard" },
+    { name: "Settings", href: "/settings" },
   ],
   social: [
     {
       name: "Facebook",
       href: "#",
-      icon: FacebookIcon, // Use imported component
+      icon: FacebookIcon,
     },
     {
       name: "Instagram",
       href: "#",
-      icon: InstagramIcon, // Use imported component
+      icon: InstagramIcon,
     },
   ],
 };
 
-
 export default function Footer() {
-  const logo = useContext(LogoContext); // Access the theme-based logo from context
+  const logo = useContext(LogoContext);
+  const { data: session } = useSession();
 
   return (
     <footer>
@@ -69,15 +73,16 @@ export default function Footer() {
             </p>
             <div className="flex gap-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="transition-colors duration-200 ease-in-out">
+                <a key={item.name} href={item.href} className="transition-colors duration-200 ease-in-out link">
                   <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" /> {/* Render imported SVG as component */}
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
                 </a>
               ))}
             </div>
           </div>
 
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            {/* Navigation Links */}
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold">Navigate</h3>
@@ -105,6 +110,7 @@ export default function Footer() {
               </div>
             </div>
 
+            {/* Conditional Navigation based on Authentication */}
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="text-sm font-semibold">Read</h3>
@@ -121,7 +127,7 @@ export default function Footer() {
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold">Clients</h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.clients.map((item) => (
+                  {(session ? navigation.user : navigation.clients).map((item) => (
                     <li key={item.name}>
                       <Link href={item.href} className="text-sm transition-colors duration-200 ease-in-out link">
                         {item.name}

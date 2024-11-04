@@ -24,10 +24,11 @@
       "@/posts/*": ["./src/posts/*"],
       "@/types/*": ["./src/types/*"],
       "@/utils/*": ["./src/utils/*"],
+      "@/models/*": ["./src/models/*"],
       "@/components/*": ["./src/app/components/*"],
       "@public/*": ["./public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "global.d.ts"],
   "exclude": ["node_modules"]
 }

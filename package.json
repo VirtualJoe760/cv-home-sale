@@ -11,15 +11,17 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.5",
-    "@sanity/client": "^6.22.2",
     "@sanity/icons": "^3.4.0",
-    "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.62.3",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/forms": "^0.5.9",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "mongodb": "^6.10.0",
+    "mongoose": "^8.8.0",
     "next": "15.0.1",
+    "next-auth": "^4.24.10",
     "next-sanity": "^9.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,6 +29,7 @@
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

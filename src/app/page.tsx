@@ -1,10 +1,9 @@
 import CarouselHero from "./components/CarouselHero";
 
-
 export default function Home() {
   return (
-    <div>
+    <main>
       <CarouselHero />
-    </div>
+    </main>
   );
 }
