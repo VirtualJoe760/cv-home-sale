@@ -1,0 +1,51 @@
+[
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "697"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "391"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "9",
+    "occurances": "107"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "30"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "4",
+    "occurances": "16"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "6",
+    "occurances": "3"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "1"
+  }
+]

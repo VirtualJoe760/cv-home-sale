@@ -1,0 +1,380 @@
+[
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "697"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "391"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "9",
+    "occurances": "107"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "30"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "4",
+    "occurances": "16"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "6",
+    "occurances": "3"
+  },
+  {
+    "cityID": "35214",
+    "cityName": "Palm Desert",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "1"
+  },
+  {
+    "cityID": "35217",
+    "cityName": "Palm Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "771"
+  },
+  {
+    "cityID": "35217",
+    "cityName": "Palm Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "243"
+  },
+  {
+    "cityID": "35217",
+    "cityName": "Palm Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "59"
+  },
+  {
+    "cityID": "35217",
+    "cityName": "Palm Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "9",
+    "occurances": "51"
+  },
+  {
+    "cityID": "35217",
+    "cityName": "Palm Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "4",
+    "occurances": "16"
+  },
+  {
+    "cityID": "35217",
+    "cityName": "Palm Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "6",
+    "occurances": "12"
+  },
+  {
+    "cityID": "35217",
+    "cityName": "Palm Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "3"
+  },
+  {
+    "cityID": "24819",
+    "cityName": "La Quinta",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "537"
+  },
+  {
+    "cityID": "24819",
+    "cityName": "La Quinta",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "460"
+  },
+  {
+    "cityID": "24819",
+    "cityName": "La Quinta",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "30"
+  },
+  {
+    "cityID": "24819",
+    "cityName": "La Quinta",
+    "stateAbrv": "CA",
+    "mlsPtID": "4",
+    "occurances": "1"
+  },
+  {
+    "cityID": "24819",
+    "cityName": "La Quinta",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "1"
+  },
+  {
+    "cityID": "22567",
+    "cityName": "Indio",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "505"
+  },
+  {
+    "cityID": "22567",
+    "cityName": "Indio",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "185"
+  },
+  {
+    "cityID": "22567",
+    "cityName": "Indio",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "60"
+  },
+  {
+    "cityID": "22567",
+    "cityName": "Indio",
+    "stateAbrv": "CA",
+    "mlsPtID": "9",
+    "occurances": "49"
+  },
+  {
+    "cityID": "22567",
+    "cityName": "Indio",
+    "stateAbrv": "CA",
+    "mlsPtID": "6",
+    "occurances": "10"
+  },
+  {
+    "cityID": "22567",
+    "cityName": "Indio",
+    "stateAbrv": "CA",
+    "mlsPtID": "4",
+    "occurances": "7"
+  },
+  {
+    "cityID": "22567",
+    "cityName": "Indio",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "5"
+  },
+  {
+    "cityID": "22567",
+    "cityName": "Indio",
+    "stateAbrv": "CA",
+    "mlsPtID": "8",
+    "occurances": "1"
+  },
+  {
+    "cityID": "12153",
+    "cityName": "Desert Hot Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "291"
+  },
+  {
+    "cityID": "12153",
+    "cityName": "Desert Hot Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "239"
+  },
+  {
+    "cityID": "12153",
+    "cityName": "Desert Hot Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "9",
+    "occurances": "190"
+  },
+  {
+    "cityID": "12153",
+    "cityName": "Desert Hot Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "50"
+  },
+  {
+    "cityID": "12153",
+    "cityName": "Desert Hot Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "4",
+    "occurances": "12"
+  },
+  {
+    "cityID": "12153",
+    "cityName": "Desert Hot Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "6",
+    "occurances": "12"
+  },
+  {
+    "cityID": "12153",
+    "cityName": "Desert Hot Springs",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "5"
+  },
+  {
+    "cityID": "7692",
+    "cityName": "Cathedral City",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "268"
+  },
+  {
+    "cityID": "7692",
+    "cityName": "Cathedral City",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "131"
+  },
+  {
+    "cityID": "7692",
+    "cityName": "Cathedral City",
+    "stateAbrv": "CA",
+    "mlsPtID": "9",
+    "occurances": "124"
+  },
+  {
+    "cityID": "7692",
+    "cityName": "Cathedral City",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "107"
+  },
+  {
+    "cityID": "7692",
+    "cityName": "Cathedral City",
+    "stateAbrv": "CA",
+    "mlsPtID": "4",
+    "occurances": "12"
+  },
+  {
+    "cityID": "7692",
+    "cityName": "Cathedral City",
+    "stateAbrv": "CA",
+    "mlsPtID": "6",
+    "occurances": "6"
+  },
+  {
+    "cityID": "7692",
+    "cityName": "Cathedral City",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "1"
+  },
+  {
+    "cityID": "7692",
+    "cityName": "Cathedral City",
+    "stateAbrv": "CA",
+    "mlsPtID": "8",
+    "occurances": "1"
+  },
+  {
+    "cityID": "38409",
+    "cityName": "Rancho Mirage",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "363"
+  },
+  {
+    "cityID": "38409",
+    "cityName": "Rancho Mirage",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "198"
+  },
+  {
+    "cityID": "38409",
+    "cityName": "Rancho Mirage",
+    "stateAbrv": "CA",
+    "mlsPtID": "9",
+    "occurances": "25"
+  },
+  {
+    "cityID": "38409",
+    "cityName": "Rancho Mirage",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "24"
+  },
+  {
+    "cityID": "38409",
+    "cityName": "Rancho Mirage",
+    "stateAbrv": "CA",
+    "mlsPtID": "4",
+    "occurances": "2"
+  },
+  {
+    "cityID": "38409",
+    "cityName": "Rancho Mirage",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "2"
+  },
+  {
+    "cityID": "38409",
+    "cityName": "Rancho Mirage",
+    "stateAbrv": "CA",
+    "mlsPtID": "6",
+    "occurances": "1"
+  },
+  {
+    "cityID": "9392",
+    "cityName": "Coachella",
+    "stateAbrv": "CA",
+    "mlsPtID": "1",
+    "occurances": "37"
+  },
+  {
+    "cityID": "9392",
+    "cityName": "Coachella",
+    "stateAbrv": "CA",
+    "mlsPtID": "5",
+    "occurances": "22"
+  },
+  {
+    "cityID": "9392",
+    "cityName": "Coachella",
+    "stateAbrv": "CA",
+    "mlsPtID": "2",
+    "occurances": "11"
+  },
+  {
+    "cityID": "9392",
+    "cityName": "Coachella",
+    "stateAbrv": "CA",
+    "mlsPtID": "6",
+    "occurances": "2"
+  },
+  {
+    "cityID": "9392",
+    "cityName": "Coachella",
+    "stateAbrv": "CA",
+    "mlsPtID": "7",
+    "occurances": "2"
+  }
+]

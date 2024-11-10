@@ -33,8 +33,8 @@ interface CarouselImage {
   
     // Call to Actions
     ctaOne: {
-      text: "Sign In",
-      href: "/auth/sign-in",
+      text: "Sign Up",
+      href: "/auth/sign-up",
       ariaLabel: "Login to your account",
     } as CTA,
     ctaTwo: {

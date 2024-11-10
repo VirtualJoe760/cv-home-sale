@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
+  images: {
+    domains: ['lh3.googleusercontent.com'],
+  },
   // Additional Next.js configuration options here
 };
 

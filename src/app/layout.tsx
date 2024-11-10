@@ -7,6 +7,9 @@ import React, { useEffect, useState } from "react";
 import { ThemeProvider, useTheme } from "@/context/ThemeContext";
 import { SessionProvider } from "next-auth/react"; // Import SessionProvider
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 // Create a LogoContext for logo sharing
 export const LogoContext = React.createContext<string>("/sun.svg");
 
@@ -22,6 +25,7 @@ export default function RootLayout({
           <ThemeProvider>
             <LogoProvider>
               <Navbar />
+              <ToastContainer />
               {children}
               <Footer />
             </LogoProvider>
@@ -37,10 +41,12 @@ function LogoProvider({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme();
   const [logo, setLogo] = useState("/sun.svg");
 
-  // Only set the logo after client-side theme determination
   useEffect(() => {
-    setLogo(theme === "dark" ? "/sun-dark.svg" : "/sun.svg");
+    if (theme) {
+      setLogo(theme === "dark" ? "/sun-dark.svg" : "/sun.svg");
+    }
   }, [theme]);
 
   return <LogoContext.Provider value={logo}>{children}</LogoContext.Provider>;
 }
+
