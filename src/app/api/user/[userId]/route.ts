@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import dbConnect from '@/utils/dbConnect';
-import UserModel from '@/models/user';
+import UserModel from '@/models/UserModel';
 import mongoose from 'mongoose';
 
 export async function GET(req: NextRequest, { params }: { params: { userId: string } }) {
-  const { userId } = params;
+  const { userId } = await params; // Await params to avoid the Next.js error
 
   try {
     console.log("Received userId in API route:", userId);
@@ -21,7 +21,7 @@ export async function GET(req: NextRequest, { params }: { params: { userId: stri
 
     // Attempt to find user by ObjectId
     console.log("Attempting to find user by ObjectId...");
-    const user = await UserModel.findById(new mongoose.Types.ObjectId(userId), 'role name email');
+    const user = await UserModel.findById(new mongoose.Types.ObjectId(userId), 'role name username email').lean();
 
     // Send response or 404 if user not found
     if (!user) {
@@ -30,7 +30,7 @@ export async function GET(req: NextRequest, { params }: { params: { userId: stri
     }
 
     console.log("User found:", user);
-    return NextResponse.json({ role: user.role, name: user.name, email: user.email }, { status: 200 });
+    return NextResponse.json({ role: user.role, name: user.name, username: user.username, email: user.email }, { status: 200 });
   } catch (error) {
     console.error("Error fetching user:", error);
     return NextResponse.json({ message: "Internal server error" }, { status: 500 });

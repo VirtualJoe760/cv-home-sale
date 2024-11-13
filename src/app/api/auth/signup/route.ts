@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcrypt';
 import dbConnect from '@/utils/dbConnect';
-import User from '@/models/user';
+import User from '@/models/UserModel';
 
 // POST request to handle user signup
 export async function POST(req: Request) {

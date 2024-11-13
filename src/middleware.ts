@@ -1,8 +1,17 @@
+// src/middleware.ts
+
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 
 export async function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // Exclude specific routes from this middleware (e.g., public API routes)
+  if (pathname === '/api/user/generateUsername' || pathname === '/api/user/saveUsername') {
+    return NextResponse.next();
+  }
+
   const token = await getToken({ req: request, secret: process.env.NEXTAUTH_SECRET });
   const loginUrl = new URL('/auth/sign-in', request.url);
 
@@ -18,7 +27,6 @@ export async function middleware(request: NextRequest) {
   // Use `sub` as the user ID since `userId` is undefined
   const tokenUserId = token.sub; 
   const tokenRole = token.role;
-  const { pathname } = request.nextUrl;
 
   // Parse URL segments for userId and role
   const pathSegments = pathname.split('/');
@@ -41,5 +49,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/:userId/:role/dashboard/:path*'], // Correct matcher for dynamic userId and role segments
+  matcher: ['/:userId/:role/dashboard/:path*'], // Applies middleware only to dashboard paths with dynamic segments
 };

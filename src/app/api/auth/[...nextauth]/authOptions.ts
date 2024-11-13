@@ -4,7 +4,7 @@ import { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import dbConnect from '@/utils/dbConnect';
-import User from '@/models/user';
+import User from '@/models/UserModel';
 import bcrypt from 'bcrypt';
 import { Session } from 'next-auth';
 

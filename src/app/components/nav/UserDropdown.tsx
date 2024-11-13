@@ -63,7 +63,7 @@ const UserDropdown: React.FC = () => {
       )}
 
       {dropdownOpen && session && (
-        <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg bg-background">
+        <div className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md shadow-lg bg-myBackground">
           <div className="py-1" role="menu" aria-orientation="vertical">
             {userDropdown(userId, userRole).map((item) => (
               item.action ? (

@@ -36,7 +36,7 @@ export default function DashboardLayout({
     async function fetchNavigationItems() {
       if (params?.userId) {
         try {
-          const { userRole, navigationItems } = await identifyUser(params.userId);
+          const { navigationItems } = await identifyUser(params.userId); // Removed userRole
           setNavigationItems(navigationItems);
         } catch (error) {
           console.error("Failed to fetch navigation items:", error);
@@ -62,7 +62,7 @@ export default function DashboardLayout({
           role={params.role}
         />
       )}
-      <div className="flex-1 p-6 overflow-auto" style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}>
+      <div className="flex-1 p-6 overflow-auto" style={{ backgroundColor: "var(--myBackground)", color: "var(--myForeground)" }}>
         {children}
       </div>
     </div>

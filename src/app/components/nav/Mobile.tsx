@@ -24,7 +24,7 @@ const Mobile: React.FC = () => {
     .join("");
 
   return (
-    <Disclosure as="header" className="bg-background">
+    <Disclosure as="header" className="bg-myBackground">
       <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
         <div className="relative flex h-16 justify-between items-center">
           <Brand />

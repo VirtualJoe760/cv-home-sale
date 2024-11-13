@@ -34,8 +34,8 @@ const UserNav: React.FC<UserNavProps> = ({ navigationItems, userId, role }) => {
         isMobile ? "w-full fixed z-50" : isCollapsed ? "w-16" : "w-64"
       }`}
       style={{
-        backgroundColor: "var(--background)",
-        color: "var(--foreground)",
+        backgroundColor: "var(--myBackground)",
+        color: "var(--myForeground)",
         transitionProperty: "width, opacity, transform",
       }}
     >
