@@ -48,7 +48,7 @@ const UserDropdown: React.FC = () => {
       {session ? (
         <button
           onClick={toggleDropdown}
-          className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-600 focus:outline-none dark:bg-gray-900"
+          className="flex items-center justify-center h-10 w-10 rounded-full bg-gray-400 focus:outline-none dark:bg-gray-900"
         >
           {user?.image ? (
             <Image src={user.image} alt="User Profile" className="rounded-full" width={40} height={40} />
@@ -73,7 +73,7 @@ const UserDropdown: React.FC = () => {
                     item.action?.(userName, router);
                     setDropdownOpen(false);
                   }}
-                  className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600"
+                  className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-500"
                 >
                   {item.name}
                 </button>
@@ -82,7 +82,7 @@ const UserDropdown: React.FC = () => {
                   key={item.name}
                   href={item.href || "#"}
                   onClick={() => setDropdownOpen(false)}
-                  className="block px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-gray-600"
+                  className="block px-4 py-2 text-sm hover:bg-gray-500 dark:hover:bg-gray-500"
                 >
                   {item.name}
                 </Link>

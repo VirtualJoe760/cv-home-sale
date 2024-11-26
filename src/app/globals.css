@@ -93,7 +93,7 @@ li {
 
 .button:hover {
   background-color: var(--hoverColor); /* Invert to main foreground color */
-  color: var(--background);
+  color: var(--darkText);
 }
 
 .animate-spin-slow {

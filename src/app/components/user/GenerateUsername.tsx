@@ -1,79 +1,127 @@
-// src/app/components/user/GenerateUsername.tsx
+"use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const GenerateUsername = ({ email }: { email: string }) => {
+const GenerateUsername = ({ userId }: { userId: string }) => {
   const [usernames, setUsernames] = useState<string[]>([]);
-  const [hasUsername, setHasUsername] = useState<boolean>(false);
-
-  async function fetchUsernames(email: string) {
-    if (!email) {
-      console.error("No email provided for fetchUsernames");
-      return;
-    }
-
-    try {
-      const response = await fetch(`/api/user/generateUsername?email=${email}`);
-      
-      if (!response.ok) {
-        const errorMessage = await response.text();
-        console.error("Error fetching usernames:", errorMessage);
-        throw new Error("Failed to fetch usernames");
-      }
-
-      const data = await response.json();
-      setHasUsername(data.hasUsername);
-      setUsernames(data.usernames || []);
-    } catch (error) {
-      console.error("Error in fetchUsernames:", error);
-    }
-  }
-
-  // Function to generate and save a new username
-  async function handleGenerateUsername() {
-    const newUsername = generateRandomUsername();
-
-    try {
-      const response = await fetch('/api/user/saveUsername', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, username: newUsername }),
-      });
-
-      if (!response.ok) {
-        const errorMessage = await response.text();
-        console.error("Error generating username:", errorMessage);
-        throw new Error("Failed to generate username");
-      }
-
-      const data = await response.json();
-      setHasUsername(true);
-      setUsernames([data.username]);
-    } catch (error) {
-      console.error("Error in handleGenerateUsername:", error);
-    }
-  }
-
-  // Example function to generate a random username
-  function generateRandomUsername() {
-    return `user${Math.floor(Math.random() * 10000)}`;
-  }
+  const [selectedUsername, setSelectedUsername] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [usernameConfirmed, setUsernameConfirmed] = useState(false);
 
   useEffect(() => {
-    fetchUsernames(email);
-  }, [email]);
+    const fetchExistingUsername = async () => {
+      try {
+        const response = await fetch(`/api/user/${userId}/username`);
+        if (!response.ok) throw new Error("Failed to fetch username");
+
+        const data = await response.json();
+        if (data.username) {
+          setSelectedUsername(data.username);
+          setUsernameConfirmed(true);
+        } else {
+          setSelectedUsername("Username not set");
+          setUsernameConfirmed(false);
+        }
+      } catch (error) {
+        console.error("Error fetching username:", error);
+        setError("Could not retrieve username");
+      }
+    };
+
+    fetchExistingUsername();
+  }, [userId]);
+
+  const fetchUsernames = async () => {
+    setError(null);
+    setUsernameConfirmed(false);
+
+    try {
+      const response = await fetch(`/api/user/${userId}/username`);
+      if (!response.ok) throw new Error("Failed to generate usernames");
+
+      const data = await response.json();
+      if (Array.isArray(data.usernames)) {
+        setUsernames(data.usernames);
+      } else {
+        setError("Invalid usernames data");
+      }
+    } catch (err) {
+      console.log(err);
+      setError("Could not retrieve usernames");
+    }
+  };
+
+  const confirmUsername = async () => {
+    if (!selectedUsername || selectedUsername === "Username not set") return;
+
+    setError(null);
+
+    try {
+      const response = await fetch(`/api/user/${userId}/username`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username: selectedUsername }),
+      });
+      if (!response.ok) throw new Error("Failed to confirm username");
+
+      setUsernameConfirmed(true);
+      setUsernames([]); // Clear usernames array after confirmation
+      toast.success(`Update Successful! Your username is ${selectedUsername}`);
+    } catch (err) {
+      console.log(err);
+      setError("Could not confirm username");
+    }
+  };
 
   return (
-    <div>
-      <h2>Suggested Usernames</h2>
-      {hasUsername ? (
-        <ul>
+    <div className="flex flex-col space-y-4">
+      {/* Username Display and Buttons */}
+      <div className="flex items-center justify-between w-full mt-4 md:mt-0">
+  <h2 className="text-3xl font-semibold">
+    Username: {selectedUsername ? selectedUsername : "Not Set"}
+  </h2>
+
+  <div className="flex space-x-4 mt-4">
+    <button onClick={fetchUsernames} className="button">
+      Generate
+    </button>
+    {!usernameConfirmed && selectedUsername && (
+      <button
+        onClick={confirmUsername}
+        className="button"
+      >
+        Confirm
+      </button>
+    )}
+  </div>
+</div>
+
+      {/* Error Message */}
+      {error && <p className="text-red-500 font-bold">{error}</p>}
+
+      {/* Username Suggestions */}
+      {usernames.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-2">
           {usernames.map((username, index) => (
-            <li key={index}>{username}</li>
+            <React.Fragment key={index}>
+              <p
+                className={`cursor-pointer text-lg px-2 ${
+                  username === selectedUsername
+                    ? "font-bold text-blue-500"
+                    : "text-blue-600 hover:text-yellow-400"
+                }`}
+                onClick={() => setSelectedUsername(username)}
+              >
+                {username}
+              </p>
+              {index < usernames.length - 1 && (
+                <span className="text-gray-400 text-xl font-extrabold leading-none">|</span>
+              )}
+            </React.Fragment>
           ))}
-        </ul>
-      ) : (
-        <button onClick={handleGenerateUsername}>Generate Username</button>
+        </div>
       )}
     </div>
   );
